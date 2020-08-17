@@ -1,0 +1,23 @@
+#lang scheme
+
+(reverse '(Z a c h a r y))  ; built in function
+
+
+; Create recursive function with defined name reverseName that takes name to be reversed as arg
+(define (reverseName name)
+  (if (null? name)
+    '()  ; base case - name is empty, return empty list
+    (begin
+      ; else statement - tail recusion through, slowly removing first letter from name from front
+      ; each return appends the first letter (which was removed) to the back
+      (append (reverseName (cdr name)) (list (car name)))
+    )
+  )
+  
+)
+
+(reverseName '(Z a c h a r y))  ; call made function
+
+
+
+  
